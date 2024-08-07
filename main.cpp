@@ -6,6 +6,7 @@
 #define SET_PITANJA "set_pitanja.txt"
 #define SET_ODGOVORENIH_PITANJA "set_odgovorenih_pitanja.txt"
 #define SET_NEODGOVORENIH_PITANJA "set_neodgovorenih_pitanja.txt"
+#define BROJ_PITANJA 170
 
 void backup_txt_file_to_destination(std::string og_file_path, std::string new_file_path) {
     std::ifstream og_file(og_file_path);
@@ -69,7 +70,7 @@ void quick_save_int_in_txt(int br, std::string txt_fajl) {
 int main() {
     
     std::set<int> sva_pitanja, odgovorena_pitanja;
-    sva_pitanja = pitanja_init(170, SET_PITANJA);
+    sva_pitanja = pitanja_init(BROJ_PITANJA, SET_PITANJA);
     odgovorena_pitanja = init_set_from_txt(SET_ODGOVORENIH_PITANJA);
     std::cout << sva_pitanja.size() << "\n";
     std::cout << odgovorena_pitanja.size() << "\n";
